@@ -2,7 +2,9 @@
 
 ## Overview
 
-This project demonstrates the implementation of an embedded system using the CAN protocol with J1939 and CANopen stacks. It is written in C/C++ and utilizes open-source tools and libraries. The project is designed to run on a Linux system with SocketCAN support, and it provides basic functionalities for sending and receiving CAN messages using the J1939 and CANopen protocols.
+This project demonstrates the implementation of an embedded system using the CAN protocol with J1939 and CANopen stacks. It is written in C/C++ and utilizes open-source tools and libraries. The project is designed to run on a Linux system with SocketCAN support, and it provides basic functionalities for sending and receiving CAN messages using the J1939 and CANopen protocols.<br>
+<a href="https://github.com/MenakaGodakanda/can_project/blob/main/Project_Description.md">Project Description</a>
+
 
 ## Features
 
@@ -13,11 +15,13 @@ This project demonstrates the implementation of an embedded system using the CAN
 
 ## Requirements
 
-- Linux (Ubuntu recommended)
-- GCC
-- CMake
-- SocketCAN
-- Can-utils
+- Linux (Ubuntu recommended).
+- GCC: For compiling C/C++ code.
+- CMake: For building your project.
+- SocketCAN: Provides CAN support in Linux.
+- Can-utils: A collection of CAN utilities.
+- J1939 Stack: Open-source stack for J1939 protocol.
+- CANopen Stack: Open-source stack for CANopen protocol.
   
 ## File Structure
 
@@ -26,23 +30,23 @@ This project demonstrates the implementation of an embedded system using the CAN
 ## Installation and Build Instructions
 
 ### Install necessary tools on Ubuntu:
-1. Update and upgrade your system
+1. Update and upgrade your system.
 ```bash
 sudo apt update
 sudo apt upgrade
 ```
 
-2. Install GCC
+2. Install `GCC`.
 ```bash
 sudo apt install build-essential
 ```
 
-3. Install CMake
+3. Install `CMake`.
 ```bash
 sudo apt install cmake
 ```
 
-4. Install can-utils and set up virtual CAN interface
+4. Install `can-utils` and set up virtual CAN interface.
 ```bash
 sudo apt install can-utils
 sudo modprobe vcan
@@ -50,9 +54,20 @@ sudo ip link add dev vcan0 type vcan
 sudo ip link set up vcan0
 ```
 
-5. Install libsocketcan for J1939 support
+5. Install `libsocketcan` for J1939 support.
 ```bash
 sudo apt install libsocketcan-dev
+```
+
+6. Install `CANopen stack` for use a library like CANopenNode.
+```bash
+git clone https://github.com/CANopenNode/CANopenNode.git
+cd CANopenNode
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
 ```
 
 ### Clone the repository:
@@ -101,27 +116,27 @@ CANopen is a higher-layer protocol and profile specification for embedded contro
 
 ## Verify and Debugging (optional)
 ### Verify Tool Installation
-1. GCC: Ensure it outputs the GCC version information.
+1. GCC: Ensure it outputs the `GCC` version information.
 ```bash
 gcc --version
 ```
 
-2. CMake: Ensure it outputs the CMake version information.
+2. CMake: Ensure it outputs the `CMake` version information.
 ```bash
 cmake --version
 ```
 
-3. SocketCAN and Can-utils: Ensure it shows information about vcan0.
+3. SocketCAN and Can-utils: Ensure it shows information about `vcan0`.
 ```bash
 ip link show vcan0
 ```
 
-4. libsocketcan:Ensure it lists headers like j1939.h.
+4. libsocketcan: Ensure it lists headers like `j1939.h`.
 ```bash
 ls /usr/include/socketcan
 ```
 
-5. CANopenNode: The CANopenNode library should be compiled and installed in /usr/local/lib
+5. CANopenNode: The CANopenNode library should be compiled and installed in `/usr/local/lib`.
 
 ### Rebuild
 1. Clean the build directory:
@@ -135,7 +150,7 @@ mkdir build
 cd build
 ```
 
-3. Run CMake to configure the project:
+3. Run `CMake` to configure the project:
 ```bash
 cmake ..
 ```
@@ -146,13 +161,13 @@ make
 ```
 
 ### Debugging
-1. Check if libj1939.a and libcanopen.a are generated:
+1. Check if `libj1939.a` and `libcanopen.a` are generated:
 ```bash
 ls build/src/j1939
 ls build/src/canopen
 ```
 
-2. Check the linking step details by enabling verbose mode in CMake:
+2. Check the linking step details by enabling verbose mode in `CMake`:
 ```bash
 make VERBOSE=1
 ```
