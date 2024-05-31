@@ -80,6 +80,14 @@ After building the project, an executable named `CANProject` will be created in 
 ```bash
 ./CANProject
 ```
+When you run the `CANProject` executable, you should see the following output:<br><br>
+![Screenshot 2024-05-31 134727](https://github.com/MenakaGodakanda/can_project/assets/156875412/c9b03e0e-66db-45de-84b4-5ab4a7fba076) <br>
+
+Here's what each line represents:
+- J1939: Sending message with ID 419385573: This indicates that the J1939 protocol has sent a message with a specific ID.
+- J1939: Receiving message: This indicates that the J1939 protocol is receiving a message.
+- CANopen: Sending message with ID 1537: This indicates that the CANopen protocol has sent a message with a specific ID.
+- CANopen: Receiving message: This indicates that the CANopen protocol is receiving a message.
 
 ## Protocols
 
@@ -137,7 +145,7 @@ cmake ..
 make
 ```
 
-### Debug
+### Debugging
 1. Check if libj1939.a and libcanopen.a are generated:
 ```bash
 ls build/src/j1939
