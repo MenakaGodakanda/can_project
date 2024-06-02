@@ -27,7 +27,7 @@ This project demonstrates the implementation of J1939 and CANopen protocols usin
 Model-based diagram of the CAN Project involves illustrating the various components and their interactions. The combination of block diagrams and flowcharts represent the structure and flow of the project. Below is the high-level block diagram of the project architecture and a detailed flowchart for the main function's operations.
 
 ### Project Architecture
-<img width="239" alt="Screenshot 2024-06-02 at 12 59 50 PM" src="https://github.com/MenakaGodakanda/can_project/assets/156875412/16695e6d-d4a3-463d-9654-a10be5e0f270"><br>
+<img width="239" alt="Screenshot 2024-06-02 at 1 03 14 PM" src="https://github.com/MenakaGodakanda/can_project/assets/156875412/0468eeae-213c-4b95-a33a-ac2596db8e91"><br>
 
 In this diagram:
 - CAN Project: The main project container.
